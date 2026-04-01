@@ -8,7 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'voltra-blue': '#000000', // Contoh warna brand Voltra
+        // Daftarkan palet warna baru di sini
+        'voltra-linen': '#FAF3E1',   // Sustainable Linen (Latar belakang utama)
+        'voltra-cotton': '#F5E7C6',  // Recycled Cotton
+        'voltra-tangerine': '#EC5E27', // Electric Tangerine (Aksen/Footer)
+        'voltra-black': '#222222',    // Black Hole (Teks utama)
       }
     },
   },
