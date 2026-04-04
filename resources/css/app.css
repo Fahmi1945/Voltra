@@ -6,6 +6,45 @@
 @source '../**/*.js';
 
 @theme {
+    /* Typography */
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Voltra Design System — Colour Tokens */
+    --color-voltra-linen:      #FAF3E1; /* Primary Background  */
+    --color-voltra-cotton:     #F5E7C6; /* Secondary Background */
+    --color-voltra-tangerine:  #FF6D1F; /* Accent / CTA        */
+    --color-voltra-black:      #222222; /* Main Text           */
 }
+
+/* ─── Page Transition & Alpine ──────────────────────────────── */
+@layer base {
+    [x-cloak] { display: none !important; }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        view-transition-name: root;
+    }
+
+    ::view-transition-old(root) {
+        animation: voltra-fade-out 200ms ease-out forwards;
+    }
+
+    ::view-transition-new(root) {
+        animation: voltra-fade-in 300ms ease-in forwards;
+    }
+
+    @keyframes voltra-fade-out {
+        from { opacity: 1; transform: translateY(0); }
+        to   { opacity: 0; transform: translateY(-6px); }
+    }
+
+    @keyframes voltra-fade-in {
+        from { opacity: 0; transform: translateY(6px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+}
+
